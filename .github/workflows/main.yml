@@ -13,8 +13,8 @@ jobs:
       uses: actions/checkout@v3
       with:
         github-server-url: 'https://github.com'
-        repository: EndCredits/android_kernel_xiaomi_sm8350
-        ref: 14-built-in
+        repository: zeroXone-github/android_kernel_xiaomi_sm8350
+        ref: linage-21
         path: kernel-srcroot
     
     - name: Setup Build Environment
