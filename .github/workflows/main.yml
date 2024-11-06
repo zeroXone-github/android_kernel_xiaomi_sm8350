@@ -32,14 +32,14 @@ jobs:
     - name: Setup Kernel SU
       run: |
         cd kernel-srcroot
-        cd drivers
-        ln -sf ../KernelSU/kernel/ kernelsu
-        cd kernel-srcroot
         git config --global user.email "you@example.com"
         git config --global user.name "zeroXone-github"
         git submodule add https://github.com/kirilll1aliuk/KernelSU.git
         git add .
         git commit -m "Blump up KSU for NonGKI kernel"
+        cd drivers
+        ln -sf ../KernelSU/kernel/ kernelsu
+        cd ..
     - name: Build Kernel for renoir
       run: |
         cd kernel-srcroot
