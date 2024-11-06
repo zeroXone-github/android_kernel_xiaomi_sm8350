@@ -34,6 +34,7 @@ jobs:
         cd kernel-srcroot
         cd drivers
         ln -sf ../KernelSU/kernel/ kernelsu
+        cd kernel-srcroot
         git config --global user.email "you@example.com"
         git config --global user.name "zeroXone-github"
         git submodule add https://github.com/kirilll1aliuk/KernelSU.git
