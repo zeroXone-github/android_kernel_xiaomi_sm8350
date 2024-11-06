@@ -14,7 +14,7 @@ jobs:
       with:
         github-server-url: 'https://github.com'
         repository: zeroXone-github/android_kernel_xiaomi_sm8350
-        ref: linage-21
+        ref: lineage-21
         path: kernel-srcroot
     
     - name: Setup Build Environment
