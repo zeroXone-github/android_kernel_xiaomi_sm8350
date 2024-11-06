@@ -84,7 +84,7 @@ generate_flashable(){
     rm -rf $AK3_PATH;
 
     echo ' Getting AnyKernel ';
-    cp -r ./tools/ak3 $AK3_PATH;
+    cp -r ./scripts/ak3 $AK3_PATH;
 
     cd $TARGET_OUT;
     ANYKERNEL_PATH=./ak3
