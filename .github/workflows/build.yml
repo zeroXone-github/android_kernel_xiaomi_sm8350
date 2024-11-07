@@ -39,7 +39,7 @@ jobs:
           git config --global user.name "zeroXone-github"
           curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s v0.9.5
           rm -rf KernelSU
-          git submodule add https://github.com/KhanhNguyen9872/KernelSU.git
+          git submodule add https://github.com/zeroXone-github/KernelSU.git
           
           export KERNEL_ROOT="$(pwd)"
           git clone https://github.com/zeroXone-two/susfs4ksu.git -b 1.4.2-kernel-5.4
