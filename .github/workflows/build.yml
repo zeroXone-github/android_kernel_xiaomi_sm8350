@@ -39,7 +39,21 @@ jobs:
           git config --global user.name "zeroXone-github"
           curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s v0.9.5
           rm -rf KernelSU
-          git submodule add https://github.com/kirilll1aliuk/KernelSU.git
+          git submodule add https://github.com/KhanhNguyen9872/KernelSU.git
+          
+          export KERNEL_ROOT="$(pwd)"
+          git clone https://github.com/zeroXone-two/susfs4ksu.git -b 1.4.2-kernel-5.4
+          
+          cp ./susfs4ksu/kernel_patches/KernelSU/kernel/sucompat.h ./KernelSU/kernel/
+          cp ./susfs4ksu/kernel_patches/50_add_susfs_in_kernel-5.4.patch ./50_add_susfs_in_kernel.patch
+          cp ./susfs4ksu/kernel_patches/fs/susfs.c ./fs/
+          cp ./susfs4ksu/kernel_patches/include/linux/susfs.h ./include/linux/
+          cp ./susfs4ksu/kernel_patches/fs/sus_su.c ./fs/
+          cp ./susfs4ksu/kernel_patches/include/linux/sus_su.h ./include/linux/
+          
+          cd $KERNEL_ROOT/KernelSU && patch -p1 < 10_enable_susfs_for_ksu.patch
+          cd $KERNEL_ROOT && patch -p1 < 50_add_susfs_in_kernel.patch
+          
           git add .
           git commit -m "Blump up KSU for NonGKI kernel"
           chmod +x ./build_r.sh
