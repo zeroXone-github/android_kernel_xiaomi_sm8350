@@ -42,8 +42,8 @@ jobs:
           git submodule add https://github.com/kirilll1aliuk/KernelSU.git
           git add .
           git commit -m "Blump up KSU for NonGKI kernel"
-          chmod +x ./build.sh
-          ./build.sh buildksu
+          chmod +x ./build_r.sh
+          ./build_r.sh buildksu
           mv ../out/ak3/Kernel-*.zip .
           releaseFile=$(set -- Kernel-*.zip; echo "$1")
           echo "RELEASE_FILE=$releaseFile" >> $GITHUB_ENV
