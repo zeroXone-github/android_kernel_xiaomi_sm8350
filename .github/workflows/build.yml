@@ -37,6 +37,8 @@ jobs:
         run: |
           git config --global user.email "you@example.com"
           git config --global user.name "zeroXone-github"
+          curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s v0.9.5
+          rm -rf KernelSU
           git submodule add https://github.com/kirilll1aliuk/KernelSU.git
           git add .
           git commit -m "Blump up KSU for NonGKI kernel"
